@@ -28,7 +28,8 @@ namespace Tango.Web
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("IdentityDbConnection"));
+                //options.UseSqlServer(Configuration.GetConnectionString("IdentityDbConnection"));
+                options.UseSqlite("Data Source=TestSQLite.db");
             });
 
             services.AddDefaultIdentity<ApplicationUser>()
